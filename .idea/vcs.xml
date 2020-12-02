@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/STATA/pmb_api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/STATA/pmb_application - master sebelum AR" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/UjianSekolah" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pmb_application" vcs="Git" />
+  </component>
+</project>
