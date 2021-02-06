@@ -3,15 +3,17 @@ package com.talenta.ujiansekolah.Entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Siswa implements Parcelable {
-    private int nis;
+    private int nik;
     private String name;
     private String unit;
     private String kelas;
     private int no_absen;
 
     public Siswa(Siswa siswa) {
-        this.nis = siswa.nis;
+        this.nik = siswa.nik;
         this.name = siswa.name;
         this.unit = siswa.unit;
         this.kelas = siswa.kelas;
@@ -19,7 +21,7 @@ public class Siswa implements Parcelable {
     }
 
     protected Siswa(Parcel in) {
-        nis = in.readInt();
+        nik = in.readInt();
         name = in.readString();
         unit = in.readString();
         kelas = in.readString();
@@ -39,11 +41,11 @@ public class Siswa implements Parcelable {
     };
 
     public int getNis() {
-        return nis;
+        return nik;
     }
 
-    public void setNis(int nis) {
-        this.nis = nis;
+    public void setNis(int nik) {
+        this.nik = nik;
     }
 
     public String getName() {
@@ -85,7 +87,7 @@ public class Siswa implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(nis);
+        dest.writeInt(nik);
         dest.writeString(name);
         dest.writeString(unit);
         dest.writeString(kelas);

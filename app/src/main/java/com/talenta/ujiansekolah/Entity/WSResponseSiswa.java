@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class WSResponseSiswa {
     private String status;
     private String message;
-    private Siswa siswa;
+    private ArrayList<Siswa> data;
 
     public String getStatus() {
         return status;
@@ -23,11 +23,11 @@ public class WSResponseSiswa {
         this.message = message;
     }
 
-    public Siswa getSiswa() {
-        return siswa;
+    public ArrayList<Siswa> getData() {
+        return data;
     }
 
-    public void setSiswa(Siswa siswa) {
-        this.siswa = siswa;
+    public void setSiswa(ArrayList<Siswa> siswa) {
+        this.data = siswa;
     }
 }
