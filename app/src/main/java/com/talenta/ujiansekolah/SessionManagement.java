@@ -3,41 +3,57 @@ package com.talenta.ujiansekolah;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.talenta.ujiansekolah.Entity.Siswa;
+
 public class SessionManagement {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     String SHARED_PREF_NAME = "session";
-    String SESSION_KEY = "session_user";//nrp atau nik
-    String SESSION_ID = "session_id";//id
-    String SESSION_NAME = "session_name";
-    String SESSION_Jabatan = "session_jabatan";
+    String SESSION_NIS = "session_student";//nis
+    String SESSION_NO_ABSEN = "no_absen";
+    String SESSION_UNIT = "unit";
+    String SESSION_KELAS = "kelas";
+    String SESSION_NAME = "name";
 
     public SessionManagement(Context context) {
         sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
 
-    public void saveSession(String NRPNIK,String id, String name, String jabatan){
-        editor.putString(SESSION_KEY,NRPNIK).commit();
-        editor.putString(SESSION_ID,id).commit();
-        editor.putString(SESSION_NAME,name).commit();
-        editor.putString(SESSION_Jabatan,jabatan).commit();
-        System.out.println("di session management "+ sharedPreferences.getString(SESSION_Jabatan,"") + SESSION_KEY + SESSION_ID + SESSION_NAME);
+    public void saveSession(Siswa s){
+        editor.putInt(SESSION_NIS,s.getNis()).commit();
+        editor.putString(SESSION_KELAS,s.getKelas()).commit();
+        editor.putString(SESSION_NAME,s.getName()).commit();
+        editor.putInt(SESSION_NO_ABSEN,s.getNo_absen()).commit();
+        editor.putString(SESSION_UNIT,s.getUnit()).commit();
     }
 
-    public String getSession(){
-        return sharedPreferences.getString(SESSION_KEY,"false");
+    public int getSession(){
+        return sharedPreferences.getInt(SESSION_NIS,0);
     }
 
-    public String getId(){return sharedPreferences.getString(SESSION_ID,"false");}
+    public int getSESSION_NO_ABSEN() {
+        return sharedPreferences.getInt(SESSION_NO_ABSEN,0);
+    }
 
-    public String getName(){return sharedPreferences.getString(SESSION_NAME,"false");}
+    public String getSESSION_UNIT() {
+        return sharedPreferences.getString(SESSION_UNIT,"");
+    }
 
-    public String getJabatan(){return sharedPreferences.getString(SESSION_Jabatan,"false");}
+    public String getSESSION_KELAS() {
+        return sharedPreferences.getString(SESSION_KELAS,"");
+    }
 
+    public String getSESSION_NAME() {
+        return sharedPreferences.getString(SESSION_NAME,"");
+    }
 
     public void clearSession(){
-        editor.putString(SESSION_KEY,"false").commit();
+        editor.putInt(SESSION_NIS,0).commit();
+        editor.putInt(SESSION_KELAS,0).commit();
+        editor.putInt(SESSION_NO_ABSEN,0).commit();
+        editor.putInt(SESSION_NAME,0).commit();
+        editor.putInt(SESSION_UNIT,0).commit();
     }
 
 }
