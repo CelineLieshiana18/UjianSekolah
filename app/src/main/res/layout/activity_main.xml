@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <FrameLayout
+        android:id="@+id/frame_utama"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?android:attr/actionBarSize"/>
+        android:layout_height="match_parent"/>
 </RelativeLayout>

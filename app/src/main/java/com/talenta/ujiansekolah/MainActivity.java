@@ -3,6 +3,8 @@ package com.talenta.ujiansekolah;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.talenta.ujiansekolah.Entity.Siswa;
 import com.talenta.ujiansekolah.Entity.WSResponseSiswa;
+import com.talenta.ujiansekolah.Fragment.FragmentUtama;
 import com.talenta.ujiansekolah.databinding.ActivityMainBinding;
 
 import org.json.JSONException;
@@ -47,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
         }else{
-            getDataUjian();
+            Fragment fragment = new FragmentUtama();
+            getSupportFragmentManager().beginTransaction().replace(R.id.frame_utama,fragment).commit();
             setContentView(binding.getRoot());
         }
     }

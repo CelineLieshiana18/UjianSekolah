@@ -7,14 +7,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class Siswa implements Parcelable {
     private int nik;
-    private String name;
+    private String nama;
     private String unit;
     private String kelas;
     private int no_absen;
 
     public Siswa(Siswa siswa) {
         this.nik = siswa.nik;
-        this.name = siswa.name;
+        this.nama = siswa.nama;
         this.unit = siswa.unit;
         this.kelas = siswa.kelas;
         this.no_absen = siswa.no_absen;
@@ -22,7 +22,7 @@ public class Siswa implements Parcelable {
 
     protected Siswa(Parcel in) {
         nik = in.readInt();
-        name = in.readString();
+        nama = in.readString();
         unit = in.readString();
         kelas = in.readString();
         no_absen = in.readInt();
@@ -48,12 +48,12 @@ public class Siswa implements Parcelable {
         this.nik = nik;
     }
 
-    public String getName() {
-        return name;
+    public String getNama() {
+        return nama;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
 
     public String getUnit() {
@@ -88,7 +88,7 @@ public class Siswa implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(nik);
-        dest.writeString(name);
+        dest.writeString(nama);
         dest.writeString(unit);
         dest.writeString(kelas);
         dest.writeInt(no_absen);

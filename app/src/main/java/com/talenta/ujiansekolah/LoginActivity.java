@@ -68,6 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Gson gson = new Gson();
                                 WSResponseSiswa weatherResponse = gson.fromJson(object.toString(), WSResponseSiswa.class);
                                 Siswa siswa = new Siswa(weatherResponse.getData().get(0));
+                                System.out.println("nama user : "+siswa.getNama());
                                 SessionManagement sessionManagement = new SessionManagement(LoginActivity.this);
                                 sessionManagement.saveSession(siswa);
                                 openMain();

@@ -13,7 +13,7 @@ public class SessionManagement {
     String SESSION_NO_ABSEN = "no_absen";
     String SESSION_UNIT = "unit";
     String SESSION_KELAS = "kelas";
-    String SESSION_NAME = "name";
+    String SESSION_NAME = "nama";
 
     public SessionManagement(Context context) {
         sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME,Context.MODE_PRIVATE);
@@ -23,7 +23,7 @@ public class SessionManagement {
     public void saveSession(Siswa s){
         editor.putInt(SESSION_NIS,s.getNis()).commit();
         editor.putString(SESSION_KELAS,s.getKelas()).commit();
-        editor.putString(SESSION_NAME,s.getName()).commit();
+        editor.putString(SESSION_NAME,s.getNama()).commit();
         editor.putInt(SESSION_NO_ABSEN,s.getNo_absen()).commit();
         editor.putString(SESSION_UNIT,s.getUnit()).commit();
     }

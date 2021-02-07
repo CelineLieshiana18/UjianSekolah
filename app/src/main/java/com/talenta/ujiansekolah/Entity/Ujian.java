@@ -3,6 +3,8 @@ package com.talenta.ujiansekolah.Entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
+
 public class Ujian implements Parcelable {
     private int id;
     private String nama;
@@ -205,5 +207,9 @@ public class Ujian implements Parcelable {
         dest.writeString(presentasi_isian);
     }
 
-    
+    @NonNull
+    @Override
+    public String toString() {
+        return nama;
+    }
 }

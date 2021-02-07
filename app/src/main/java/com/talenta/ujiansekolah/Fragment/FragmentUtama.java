@@ -64,6 +64,7 @@ public class FragmentUtama extends Fragment {
                              Bundle savedInstanceState) {
         sessionManagement = new SessionManagement(getActivity());
         binding = FragmentUtamaBinding.inflate(inflater,container,false);
+        allInPage();
         return binding.getRoot();
     }
     public void allInPage(){
@@ -71,6 +72,8 @@ public class FragmentUtama extends Fragment {
 
         });
         binding.spinUjian.setAdapter(getUjianArrayAdapter());
+        binding.tvNama.setText(sessionManagement.getSESSION_NAME());
+        binding.tvKelas.setText(sessionManagement.getSESSION_KELAS());
     }
     private void loadUjian(){
         URL = VariabelGlobal.link_ip+"students/ujian/"+sessionManagement.getSession();
