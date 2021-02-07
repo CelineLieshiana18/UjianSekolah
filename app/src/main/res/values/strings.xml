@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">UjianSekolah</string>
     <string name="field_kosong_siswa_messsage">\"NIS atau Password tidak boleh kosong\"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

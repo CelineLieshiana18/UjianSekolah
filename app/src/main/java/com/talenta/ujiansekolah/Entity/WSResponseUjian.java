@@ -2,10 +2,10 @@ package com.talenta.ujiansekolah.Entity;
 
 import java.util.ArrayList;
 
-public class WSResponseSiswa {
+public class WSResponseUjian {
     private String status;
     private String message;
-    private ArrayList<Siswa> data;
+    private ArrayList<Ujian> data;
 
     public String getStatus() {
         return status;
@@ -23,11 +23,11 @@ public class WSResponseSiswa {
         this.message = message;
     }
 
-    public ArrayList<Siswa> getData() {
+    public ArrayList<Ujian> getData() {
         return data;
     }
 
-    public void setData(ArrayList<Siswa> siswa) {
-        this.data = siswa;
+    public void setData(ArrayList<Ujian> ujians) {
+        this.data = ujians;
     }
 }
