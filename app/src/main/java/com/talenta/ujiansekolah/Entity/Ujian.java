@@ -23,6 +23,48 @@ public class Ujian implements Parcelable {
     private String presentase_pg;
     private String presentasi_isian;
 
+
+    public Ujian(Ujian ujian) {
+        this.id = ujian.id;
+        this.nama = ujian.nama;
+        this.waktu = ujian.waktu;
+        this.tipe = ujian.tipe;
+        this.tipe_ujian = ujian.tipe_ujian;
+        this.waktu_mulai = ujian.waktu_mulai;
+        this.jenis = ujian.jenis;
+        this.status = ujian.status;
+        this.kkm = ujian.kkm;
+        this.mata_pelajaran = ujian.mata_pelajaran;
+        this.bab = ujian.bab;
+        this.tahun_ajaran = ujian.tahun_ajaran;
+        this.materi_pokok = ujian.materi_pokok;
+        this.nik = ujian.nik;
+        this.presentase_pg = ujian.presentase_pg;
+        this.presentasi_isian = ujian.presentasi_isian;
+    }
+
+    public Ujian(int id, String nama, int waktu, String tipe, String tipe_ujian, String waktu_mulai, String jenis, String status, int kkm, String mata_pelajaran, String bab, String tahun_ajaran, String materi_pokok, String nik, String presentase_pg, String presentasi_isian) {
+        this.id = id;
+        this.nama = nama;
+        this.waktu = waktu;
+        this.tipe = tipe;
+        this.tipe_ujian = tipe_ujian;
+        this.waktu_mulai = waktu_mulai;
+        this.jenis = jenis;
+        this.status = status;
+        this.kkm = kkm;
+        this.mata_pelajaran = mata_pelajaran;
+        this.bab = bab;
+        this.tahun_ajaran = tahun_ajaran;
+        this.materi_pokok = materi_pokok;
+        this.nik = nik;
+        this.presentase_pg = presentase_pg;
+        this.presentasi_isian = presentasi_isian;
+    }
+
+    public Ujian() {
+    }
+
     protected Ujian(Parcel in) {
         id = in.readInt();
         nama = in.readString();

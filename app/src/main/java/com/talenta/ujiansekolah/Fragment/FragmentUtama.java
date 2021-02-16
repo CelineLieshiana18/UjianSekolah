@@ -1,5 +1,7 @@
 package com.talenta.ujiansekolah.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -21,6 +23,7 @@ import com.talenta.ujiansekolah.Entity.WSResponseUjian;
 import com.talenta.ujiansekolah.R;
 import com.talenta.ujiansekolah.SessionManagement;
 import com.talenta.ujiansekolah.VariabelGlobal;
+import com.talenta.ujiansekolah.databinding.AlertDialogBinding;
 import com.talenta.ujiansekolah.databinding.FragmentUtamaBinding;
 
 import org.json.JSONException;
@@ -30,6 +33,7 @@ import java.util.ArrayList;
 
 public class FragmentUtama extends Fragment {
     private FragmentUtamaBinding binding;
+    private AlertDialogBinding binding2;
     private SessionManagement sessionManagement;
     private ArrayList<Ujian> ujians = new ArrayList<>();
     private ArrayAdapter<Ujian> ujianArrayAdapter;
@@ -69,7 +73,24 @@ public class FragmentUtama extends Fragment {
     }
     public void allInPage(){
         binding.btnSubmitUjian.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            binding2 = AlertDialogBinding.inflate(getLayoutInflater());
+            Ujian u = new Ujian((Ujian) binding.spinUjian.getSelectedItem());
+            binding2.txtUjian.setText(u.getNama());
+            builder.setView(binding2.getRoot()).setPositiveButton("YAKIN", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
+                }
+            });
+            builder.setView(binding2.getRoot()).setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            builder.create();
+            builder.show();
         });
         binding.spinUjian.setAdapter(getUjianArrayAdapter());
         binding.tvNama.setText(sessionManagement.getSESSION_NAME());
